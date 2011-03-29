@@ -1,4 +1,21 @@
 
+var Me;
+var App;
+var Ctx;
+
+function sendImage(img) {
+    var hdr = "data:image/png;base64,";
+    App.invokeService(
+        "image.send",
+        {
+            data: img.slice(hdr.length),
+            title: "Rainbooth Image!",
+            description: $('#area').val(),
+            contentType: "image/png"
+        }
+    );
+}
+
 function onStateChange(type, arg) {
     switch (type) {
         case "session-began":
@@ -8,21 +25,21 @@ function onStateChange(type, arg) {
 
 $(document).ready(function($) {
     
-    if (!window.navigator.service || !window.navigator.service.media) {
-        alert("Rainbow is not installed! The app will not work :(");
+    if (!window.navigator.service ||
+        !window.navigator.service.media ||
+        !window.navigator.apps ||
+        !window.navigator.apps.invokeService) {
+        alert("The Rainbow and OpenWebApps add-ons are not installed! The app will not work :(");
         return;
     }
     
-    // Start preview after couple seconds?
-    var Me;
-    var ctx;
-    setTimeout(function() {
-        Me = window.navigator.service.media;
-        ctx = document.getElementById('tehcanvas').getContext("2d");
-        Me.beginSession(
-            {'width':800,'height':600,'audio':false}, ctx, onStateChange
-        );
-    }, 500);
+    // Start preview 
+    Me = window.navigator.service.media;
+    App = window.navigator.apps;
+    Ctx = document.getElementById('tehcanvas').getContext("2d");
+    Me.beginSession(
+        {'width':800,'height':600,'audio':false}, Ctx, onStateChange
+    );
     
     // Take a picture
     $('#ohSnap').bind('click', function() {
@@ -53,20 +70,26 @@ $(document).ready(function($) {
         }, 1000);    
             
         // Display a camera flash after the countdown (3 second delay)
-        // TO DO: actually capture the image at this time
         setTimeout(function(){
+            $('tehcanvas').hide();
             flash.show(0, function() {
                 $(this).addClass('fadeOut');  
             });
             numbers.remove();
+            
+            var data = Me.fetchImage();
+            sendImage(data);
         }, 3000);
         
-        // Fade in the redo and tweet buttons, give focus to the textarea
+        // Fade in the redo and flickr buttons, give focus to the textarea
         setTimeout(function(){
             $('#redo, #flickr').show(0, function () {
                 $(this).addClass('fadeIn').css({ display : 'inline-block' });
             });
             $('#compose').show(0, function() {
+                $(this).addClass('fadeIn');
+            });
+            $('#tehcanvas').show(0, function() {
                 $(this).addClass('fadeIn');
             });
             $('#area').focus();

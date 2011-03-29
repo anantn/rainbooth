@@ -71,6 +71,14 @@ body {
     opacity: 1;
 }
 
+#canvas {
+    display: block;
+    position: absolute;
+    text-align: center;
+    height: 600px;
+    width: 800px;
+}
+
 #controls {
     display: block;
     left: 0;

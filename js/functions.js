@@ -26,43 +26,49 @@ $(document).ready(function($) {
     
     // Take a picture
     $('#ohSnap').bind('click', function() {
+        
         var numbers = $('#numbers');
-        var dots = $('#dots');
-        var flash = $('#flash');
+        var dots    = $('#dots');
+        var flash   = $('#flash');
+        var ohSnap  = $(this);
         
         // Display the countdown and remove the dotted overlay
         numbers.show();
-        dots.fadeOut(1000);
+        dots.addClass('fadeOut');
         
         // Show and fadeout individual numbers 1 second apart
         numbers.children().each(function(i) {
             var e = $(this);
             setTimeout(function(){
-                e.show().fadeOut(1000);
+                e.show(0, function() {
+                    $(this).addClass('fadeOut');  
+                });
             }, i*1000);
         });
         
         // Fade out the shutter button
-        $(this).fadeOut(1000);
-        
+        ohSnap.addClass('fadeOut');
+        setTimeout(function(){
+            ohSnap.remove();
+        }, 1000);    
+            
         // Display a camera flash after the countdown (3 second delay)
         // TO DO: actually capture the image at this time
         setTimeout(function(){
-            $('#tehcanvas').fadeOut(300);
-            flash.show().fadeOut(1000);
+            flash.show(0, function() {
+                $(this).addClass('fadeOut');  
+            });
             numbers.remove();
-            
-            var data = Me.fetchImage();
-            console.log("Got image! " + data);
-            Me.endSession();
         }, 3000);
         
         // Fade in the redo and tweet buttons, give focus to the textarea
         setTimeout(function(){
-            $('#dots').fadeIn(1000);
-            $('#redo, #twitter').fadeIn(1000).css({ display : 'inline-block' });
-            $('#compose').fadeIn(1000);
-            $('#tehcanvas').fadeIn(1000);
+            $('#redo, #twitter').show(0, function () {
+                $(this).addClass('fadeIn').css({ display : 'inline-block' });
+            });
+            $('#compose').show(0, function() {
+                $(this).addClass('fadeIn');
+            });
             $('#area').focus();
         }, 4000);
     });
@@ -70,4 +76,5 @@ $(document).ready(function($) {
     // Insert default twitter message 
     // TO DO: limit to 140 characters
     $('#area').val('I just took a photograph using Rainbow by Mozilla Labs!');
+
 });

@@ -1,0 +1,47 @@
+body #dots {
+    background-image: none;
+    background-color: rgba(0,0,0,0.25);
+}
+
+body #controls {
+    height: 96px;
+    bottom: 0;
+}
+
+body #controls .button {
+    height: 96px;
+    padding-top: 60px;
+
+    -webkit-border-radius: 0;
+       -moz-border-radius: 0;
+         -o-border-radius: 0;
+            border-radius: 0;
+}
+
+body #controls .button .icon {
+    top: 15px;
+}
+
+body #controls #ohSnap {
+    width: 100%;
+}
+
+body #controls #redo,
+body #controls #twitter {
+    width: 50%;
+    float: left;
+}
+
+
+body #compose #bitly {
+    line-height: 28px;
+    font-size: 12px;
+    width: 180px;
+    top: 11px;
+}
+
+body #compose textarea {
+    font-size: 28px;
+    line-height: 36px;
+    text-indent: 190px;
+}

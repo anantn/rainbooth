@@ -63,7 +63,7 @@ $(document).ready(function($) {
         
         // Fade in the redo and tweet buttons, give focus to the textarea
         setTimeout(function(){
-            $('#redo, #twitter').show(0, function () {
+            $('#redo, #flickr').show(0, function () {
                 $(this).addClass('fadeIn').css({ display : 'inline-block' });
             });
             $('#compose').show(0, function() {

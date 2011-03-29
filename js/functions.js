@@ -22,7 +22,7 @@ $(document).ready(function($) {
         Me.beginSession(
             {'width':800,'height':600,'audio':false}, ctx, onStateChange
         );
-    }, 2000);
+    }, 500);
     
     // Take a picture
     $('#ohSnap').bind('click', function() {
@@ -51,6 +51,9 @@ $(document).ready(function($) {
             $('#tehcanvas').fadeOut(300);
             flash.show().fadeOut(1000);
             numbers.remove();
+            
+            var data = Me.fetchImage();
+            console.log("Got image! " + data);
             Me.endSession();
         }, 3000);
         

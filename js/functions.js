@@ -13,11 +13,9 @@ function sendImage(img) {
             description: $('#area').val(),
             contentType: "image/png"
         },
-        function() {
-            alert("success!");
-        },
+        function() {},
         function(errObj) {
-            alert("error ("+ errObj.code +"): " + errObj.message);
+            alert("There was an error! ("+ errObj.code +"): " + errObj.message);
         }
     );
 }

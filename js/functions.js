@@ -54,12 +54,12 @@ $(document).ready(function($) {
     var img = new Image();
     img.src = "i/rainbow.png";
     img.onload = function() {
-        Ctx.drawImage(img, 272, 172);
+        Ctx.drawImage(img, 472, 322);
     }
     
     // Start preview 
     Me.beginSession(
-        {'width':800,'height':600,'audio':false}, Ctx, onStateChange
+        {'width':1200,'height':900,'audio':false}, Ctx, onStateChange
     );
     
     // Take a picture
@@ -89,30 +89,27 @@ $(document).ready(function($) {
         setTimeout(function(){
             ohSnap.remove();
         }, 1000);    
-        setTimeout(function(){
-            canvas.addClass('fadeOut');
-        }, 2000);
         
         // Display a camera flash after the countdown (3 second delay)
         setTimeout(function(){
-            flash.show(0, function() {
-                $(this).addClass('fadeOut');  
-            });
+            canvas.hide();
             numbers.remove();
             
             var data = Me.fetchImage();
             Me.endSession();
             
-            canvas.show(0, function() {
-                canvas.addClass('fadeIn');
-            });
             $('#flickr').bind('click', function() {
                 sendImage(data);
             });
+            
+            flash.show();
+            canvas.show();
+            
         }, 3000);
         
         // Fade in the redo and flickr buttons, give focus to the textarea
         setTimeout(function(){
+            flash.addClass('fadeOut');
             $('#redo, #flickr').show(0, function () {
                 $(this).addClass('fadeIn').css({ display : 'inline-block' });
             });

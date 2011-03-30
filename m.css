@@ -27,21 +27,13 @@ body #controls #ohSnap {
 }
 
 body #controls #redo,
-body #controls #twitter {
+body #controls #twitter,
+body #controls #flickr {
     width: 50%;
     float: left;
-}
-
-
-body #compose #bitly {
-    line-height: 28px;
-    font-size: 12px;
-    width: 180px;
-    top: 11px;
 }
 
 body #compose textarea {
     font-size: 28px;
     line-height: 36px;
-    text-indent: 190px;
 }

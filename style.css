@@ -32,6 +32,7 @@ body {
     line-height: 24px;
     position: absolute;
     
+    background-color: #222;
     /* background-image: url('i/canvas.jpg'); */
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -65,20 +66,22 @@ body {
 }
 
 #flash {
-    z-index: 100;
+    z-index: 2;
     background-color: #fff;
     display: none;
     opacity: 1;
+    position: absolute;
 }
 
 #canvas {
     display: block;
     position: absolute;
     text-align: center;
-    height: 600px;
+    height: 900px;
     width: 100%;
-    left: 0;
-    bottom: 250px;
+    top: 50%;
+    margin-top: -450px;
+    bottom: 0;
 }
 
 #controls {
@@ -175,27 +178,6 @@ body {
     opacity: 0;
 }
 
-#compose #bitly {
-    display: block;
-    font-size: 18px;
-    line-height: 60px;
-    text-align: center;
-    width: 300px;
-    font-family: "Courier";
-    font-weight: bold;
-    color: #444;
-    background-color: #ffff99;
-    position: absolute;
-    top: 16px;
-    left: 10px;
-    cursor: pointer;
-    
-    -webkit-border-radius: 10px;
-       -moz-border-radius: 10px;
-         -o-border-radius: 10px;
-            border-radius: 10px;
-}
-
 #compose textarea {
     background-color: transparent;
     width: 100%;
@@ -210,7 +192,6 @@ body {
     resize: none;
     outline: none;
     overflow: hidden;
-    text-indent: 320px;
 }
 
 #wrapper .fadeOut {

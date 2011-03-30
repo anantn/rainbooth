@@ -32,20 +32,6 @@ $(window).unload(function() {
 });
 
 $(document).ready(function($) {
-    if (!window.navigator.service ||
-        !window.navigator.service.media)
-    {
-        alert("The Rainbow addon is not installed! The app will not work :(");
-        return;
-    }
-
-    if(!window.navigator.apps ||
-       !window.navigator.apps.invokeService)
-    {
-        alert("The OpenWebApps addon is not installed! The app will not work :(");
-        return;
-    }
-    
     Me = window.navigator.service.media;
     App = window.navigator.apps;
     Ctx = document.getElementById('tehcanvas').getContext("2d");

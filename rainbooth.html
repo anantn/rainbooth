@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>RainBooth&trade;</title>
+    
+    <meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; width=device-width;">
+    
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    
+    <script src="https://stage.myapps.mozillalabs.com/jsapi/include.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery-1.5.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/functions.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+    window.onload = function(){
+        window.resizeTo(1200,900);
+    };
+    </script>
+
+</head>
+<body>
+    <div id="wrapper">
+    
+        <div id="flash">
+        </div>
+    
+        <div id="dots">
+        </div>
+        
+        <div id="compose">
+            <textarea id="area" placeholder="Type something&hellip;"></textarea>
+        </div>
+    
+        <div id="numbers">
+            <div id="3" class="number">3</div>
+            <div id="2" class="number">2</div>
+            <div id="1" class="number">1</div>
+        </div>
+ 
+        <div id="canvas">
+            <canvas id="tehcanvas" width="1200" height="900"/>
+        </div>
+  
+        <div id="controls" class="clearfix">
+            <div id="ohSnap" class="button">
+                <span class="icon"><img src="i/camera.png"></span>
+                Take a Pic
+            </div>
+            <div id="redo" class="button">
+                <span class="icon"><img src="i/redo.png"></span>
+                Redo
+            </div>
+            <div id="flickr" class="button">
+                <span class="icon"><img src="i/flickr.png"></span>
+                Send to...
+            </div>
+        </div>
+    
+    </div>
+</body>
+</html>

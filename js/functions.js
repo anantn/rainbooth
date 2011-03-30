@@ -28,12 +28,17 @@ $(window).unload(function() {
 });
 
 $(document).ready(function($) {
-    
     if (!window.navigator.service ||
-        !window.navigator.service.media ||
-        !window.navigator.apps ||
-        !window.navigator.apps.invokeService) {
-        alert("The Rainbow and OpenWebApps add-ons are not installed! The app will not work :(");
+        !window.navigator.service.media)
+    {
+        alert("The Rainbow addon is not installed! The app will not work :(");
+        return;
+    }
+
+    if(!window.navigator.apps ||
+       !window.navigator.apps.invokeService)
+    {
+        alert("The OpenWebApps addon is not installed! The app will not work :(");
         return;
     }
     

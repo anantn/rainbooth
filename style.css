@@ -76,7 +76,9 @@ body {
     position: absolute;
     text-align: center;
     height: 600px;
-    width: 800px;
+    width: 100%;
+    left: 0;
+    bottom: 250px;
 }
 
 #controls {
@@ -91,53 +93,53 @@ body {
     z-index: 3;
 }
 
-    #controls .button {
-        width: 160px;
-        height: 120px;
-        margin: 0 auto;
-        border: none;
-        cursor: pointer;
-        background-color: rgba(0, 0, 0, 0.5);
-        color: #fff;
-        padding-top: 75px;
-        display: inline-block;
-        position: relative;
-        top: 0;
-        
-        -webkit-border-radius: 10px;
-           -moz-border-radius: 10px;
-             -o-border-radius: 10px;
-                border-radius: 10px;
-    }
+#controls .button {
+    width: 160px;
+    height: 120px;
+    margin: 0 auto;
+    border: none;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding-top: 75px;
+    display: inline-block;
+    position: relative;
+    top: 0;
     
-    #controls .button:hover {
-        background-color: rgba(0, 0, 0, 0.65);
-    }
-    
-    #controls .button:active {
-        top: 1px;
-    }
-    
-    #controls .button .icon {
-        position: absolute;
-        width: 48px;
-        height: 48px;
-        left: 50%;
-        margin-left: -24px;
-        top: 30px;
-    }
-    
-    #controls .button .icon img {
-        width: 48px;
-        height: 48px;
-    }
-    
-    #controls #redo,
-    #controls #twitter,
-    #controls #flickr {
-        display: none;
-        opacity: 0;
-    }
+    -webkit-border-radius: 10px;
+       -moz-border-radius: 10px;
+         -o-border-radius: 10px;
+            border-radius: 10px;
+}
+
+#controls .button:hover {
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+#controls .button:active {
+    top: 1px;
+}
+
+#controls .button .icon {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    left: 50%;
+    margin-left: -24px;
+    top: 30px;
+}
+
+#controls .button .icon img {
+    width: 48px;
+    height: 48px;
+}
+
+#controls #redo,
+#controls #twitter,
+#controls #flickr {
+    display: none;
+    opacity: 0;
+}
     
 #numbers {
     width: 320px;
@@ -156,15 +158,15 @@ body {
     z-index: 2;
 }
 
-    #numbers .number {
-        width: 320px;
-        height: 320px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: none;
-        opacity: 1;
-    }
+#numbers .number {
+    width: 320px;
+    height: 320px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    opacity: 1;
+}
     
 #compose {
     z-index: 2;
@@ -233,18 +235,18 @@ body {
 /* clearfix */
 
 .clearfix:after {
-	content: ".";
-	display: block;
-	clear: both;
-	visibility: hidden;
-	line-height: 0;
-	height: 0;
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
 }
  
 html[xmlns] .clearfix {
-	display: block;
+    display: block;
 }
  
 * html .clearfix {
-	height: 1%;
+    height: 1%;
 }

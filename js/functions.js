@@ -12,6 +12,12 @@ function sendImage(img) {
             title: "Rainbooth Image!",
             description: $('#area').val(),
             contentType: "image/png"
+        },
+        function() {
+            alert("success!");
+        },
+        function(errObj) {
+            alert("error ("+ errObj.code +"): " + errObj.message);
         }
     );
 }

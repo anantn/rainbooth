@@ -80,10 +80,11 @@ $(document).ready(function($) {
         setTimeout(function(){
             canvas.hide();
             numbers.remove();
+            var img = Me.fetchImage();
             Me.endSession();
             
             $('#flickr').bind('click', function() {
-                sendImage(Me.fetchImage());
+                sendImage(img);
             });
             
             flash.show();

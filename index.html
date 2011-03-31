@@ -30,14 +30,6 @@
             $("#launch").css("display", "inline");
         }
     });
-    
-    function openBooth()
-    {
-        window.open(
-            'rainbooth.html', 'rainbooth',
-            'width=1200,height=900'
-        );
-    }
     </script>
 </head>
 <body>
@@ -47,7 +39,7 @@
         <input type="button" id="owadd" value="Get OpenWebApps" style="display:none;"/>
         
         <div id="launch" style="display:none;">
-            <input type="button" id="launch" onclick="openBooth();" value="Launch Rainbooth"/>
+            <a href="rainbooth.html">Launch Rainbooth</a>
         </div>
     </div>
 </body>

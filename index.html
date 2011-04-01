@@ -23,28 +23,34 @@
         }
         
         if (!rb || !ow) {
-            $("#adtext").css("display", "inline");
-            if (!rb) $("#rbadd").css("display", "inline");
-            if (!ow) $("#owadd").css("display", "inline");
+            $("#adtext").css("display", "block");
+            if (!rb) $("#rainbow_getit").css("display", "block");
+            if (!ow) $("#owa_getit").css("display", "block");
         } else {
             window.location = "rainbooth.html"
         }
-        
+
         $("#rbadd").bind('click', function() {
             window.open('rainbow-0.4-dev-mac.xpi');
         });
         $("#owadd").bind('click', function() {
             window.open('https://github.com/mozilla/openwebapps/tree/services/addons/firefox');
         });
-    });
+    })
     </script>
 </head>
 <body>
-    <div id="wrapper">
-        <div id="adtext" style="display:none;">You need the following add-ons to run Rainbooth!</div>
-        <input type="button" id="rbadd" value="Get Rainbow" style="display:none;"/>
-        <input type="button" id="owadd" value="Get OpenWebApps" style="display:none;"/>
-        
+    <div id="upsell">
+        <div id="adtext" style="display:none;">Missing prerequisites!  You need the following add-ons to run Rainbooth:</div>
+        <p id="rainbow_getit"  style="display:none;">
+          <strong>Rainbow</strong> - which lets webpages use your webcam with your permission: <br/>
+          <input type="button" id="rbadd" value="install rainbow" />
+        </p>
+        <p id="owa_getit"  style="display:none;">
+          <strong>OpenWebApps</strong> - which adds native browser support for Open Web Applications: <br/>
+          <input type="button" id="owadd" value="install OpenWebApps" />
+        </p>
+
         <div id="launch" style="display:none;">
             <a href="rainbooth.html">Launch Rainbooth</a>
         </div>

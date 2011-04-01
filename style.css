@@ -58,6 +58,27 @@ body {
     position: absolute;
 }
 
+#upsell {
+    top: 30%;
+    left: 50%;
+    margin-left: -300px;
+    width: 600px;
+    margin-top: -150px;
+    height: 300px;
+    color: #ccc;
+    position: absolute;
+}
+
+#upsell div#adtext {
+    font-size: 1.3em;
+}
+
+#upsell p {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+
 #dots {
     z-index: 1;
     position: absolute;

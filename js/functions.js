@@ -13,7 +13,22 @@ function sendImage(img) {
             description: $('#area').val(),
             contentType: "image/png"
         },
-        function() {},
+        function() {
+            /* Success implies flickr for demo purposes only */
+            $('#area').val("Image was successfully sent to flickr!");
+            $('#area').css(
+                "-moz-transition-property",
+                "text-shadow"
+            );
+            $('#area').css(
+                "-moz-transition-duration",
+                "3s"
+            );
+            $('#area').css(
+                "text-shadow",
+                "1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue"
+            );
+        },
         function(errObj) {
             alert("There was an error! ("+ errObj.code +"): " + errObj.message);
         }

@@ -10,8 +10,10 @@
     <link rel="icon" type="image/x-icon" href="favicon.png">
     
     <script src="js/jquery-1.5.1.min.js" type="text/javascript" charset="utf-8"></script>
+
     <script type="text/javascript">
     $(document).ready(function() {
+            
         var rb = false;
         var ow = false;
         
@@ -36,20 +38,43 @@
         $("#owadd").bind('click', function() {
             window.open('openwebapps-0.2-dev.xpi');
         });
-    })
+        
+        $(window).bind('load resize', function() {
+            var h = $(window).height();
+            $("#upsellWrap").css({ "height" : h });
+        });
+        
+    });
     </script>
 </head>
 <body>
-    <div id="upsell">
-        <div id="adtext" style="display:none;">Missing prerequisites!  You need the following add-ons to run Rainbooth:</div>
-        <p id="rainbow_getit"  style="display:none;">
-          <strong>Rainbow</strong> - which lets webpages use your webcam with your permission: <br/>
-          <input type="button" id="rbadd" value="install rainbow" />
-        </p>
-        <p id="owa_getit"  style="display:none;">
-          <strong>OpenWebApps</strong> - which adds native browser support for Open Web Applications: <br/>
-          <input type="button" id="owadd" value="install OpenWebApps" />
-        </p>
+
+    <div id="wrapper" class="upsell">
+    
+        <div id="upsellWrap">
+        
+            <div id="upsell" class="clearfix">
+            
+                <div id="adtext" style="display:none;"><strong>Uh oh!</strong> You need the following add-ons to run Rainbooth:</div>
+                
+                <div id="rainbow_getit" class="clearfix"  style="display:none;">
+                    <input type="button" id="rbadd" value="install rainbow" />
+                    <div class="description">
+                        <strong>Rainbow</strong> - allows webpages to use your webcam with your permission.
+                    </div>
+                </div>
+                
+                <div id="owa_getit" class="clearfix"  style="display:none;">
+                    <input type="button" id="owadd" value="Install OpenWebApps" />
+                    <div class="description">
+                        <strong>OpenWebApps</strong> - Adds native browser support for Open Web Applications.
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
     </div>
+
 </body>
 </html>

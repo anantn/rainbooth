@@ -58,24 +58,56 @@ body {
     position: absolute;
 }
 
-#upsell {
-    top: 30%;
-    left: 50%;
-    margin-left: -300px;
+#wrapper.upsell {
     width: 600px;
-    margin-top: -150px;
-    height: 300px;
-    color: #ccc;
-    position: absolute;
+    margin: 0 auto;
+    position: relative;
+}
+
+#upsellWrap {
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+}
+
+#upsell {
+    width: 600px;
+    margin: 0 auto;
+    color: #fff;
 }
 
 #upsell div#adtext {
-    font-size: 1.3em;
+    font-size: 16px;
+    margin-bottom: 24px;
+    float: left;
 }
 
-#upsell p {
-    margin-top: 20px;
-    margin-left: 20px;
+#upsell #rainbow_getit,
+#upsell #owa_getit {
+    margin-top: 24px;
+    float: left;
+}
+
+#upsell .description {
+    width: 450px;
+    display: inline-block;
+    float: left;
+    padding-left: 20px;
+}
+
+#upsell input {
+    background-color: #ffff99;
+    color: #222;
+    padding: 5px 10px;
+    border: none;
+    font-weight: bold;
+    float: left;
+    width: 150px;
+    cursor: pointer;
+    font-family: "helvetica neue", helvetica, arial, sans-serif;
+    font-size: 12px;
+    
+    border-radius: 5px;
 }
 
 

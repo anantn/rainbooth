@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "name": "Rainbooth",
+  "description": "Snap pictures and share them with friends!",
+  "icons": {
+    "48": "/i/rainbow_48.png",
+    "256": "/i/rainbow.png"
+  },
+  "developer": {
+    "name": "Mozilla Labs",
+    "url": "http://mozillalabs.com"
+  },
+  "installs_allowed_from": [
+    "https://apps.mozillalabs.com"
+  ],
+  "default_locale": "en"
+}
+

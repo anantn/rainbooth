@@ -4,6 +4,7 @@
   "description": "Snap pictures and share them with friends!",
   "icons": {
     "48": "/i/rainbow_48.png",
+    "128": "/i/rainbow_128.png",
     "256": "/i/rainbow.png"
   },
   "developer": {
